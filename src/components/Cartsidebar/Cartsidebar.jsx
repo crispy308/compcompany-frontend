@@ -10,7 +10,7 @@ const CartSidebar = () => {
 
   const onSubmit = () => {
     const params = { orders: [...cart] };
-    fetch('http://localhost:4000/order', {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/order`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

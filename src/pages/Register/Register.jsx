@@ -27,7 +27,7 @@ const Register = () => {
 
   const onSubmit = (value) => {
     const params = { ...value };
-    fetch('http://localhost:4000/register', {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/register`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

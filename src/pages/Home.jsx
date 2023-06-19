@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:4000/products?search=${searchValue}&sort=${selectedSort.tag}&category=${activeCategory}`,
+      `${process.env.REACT_APP_SERVER_URL}/products?search=${searchValue}&sort=${selectedSort.tag}&category=${activeCategory}`,
     )
       .then((res) => res.json())
       .then((result) => setProducts(result));

@@ -25,7 +25,7 @@ function App() {
   }, [cart]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/categories')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/categories`)
       .then((res) => res.json())
       .then((arr) => setFilter([{ name: 'Все', tag: 'all' }, ...arr]))
       .catch((err) => console.log(err));
@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      fetch('http://localhost:4000/auth', {
+      fetch(`${process.env.REACT_APP_SERVER_URL}/auth`, {
         method: 'get',
         headers: {
           'Content-type': 'application/json',
