@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 
 import styles from './SearchBlock.module.scss';
-import searchimg from '../../assets/img/search.svg';
 import arrowimg from '../../assets/img/arrow.svg';
 
 const SearchBlock = ({ sortValue, onClickSort, searchValue, onChangeSearch }) => {
   const [openPopup, setOpenPopup] = useState(false);
   const sortMethdos = [
-    { name: 'По возрастанию цены', tag: 'price' },
-    { name: 'По убыванию цены', tag: '-price' },
-    { name: 'По названию', tag: 'title' },
-    // { name: 'По названию', tag: '-title' },
+    { name: 'По возрастанию', tag: 'price' },
+    { name: 'По убыванию', tag: '-price' },
   ];
 
   const selectSort = (obj) => {
@@ -21,12 +18,11 @@ const SearchBlock = ({ sortValue, onClickSort, searchValue, onChangeSearch }) =>
   return (
     <div className={styles.searchblock}>
       <div className={styles.search}>
-        <img src={searchimg} alt="" />
         <input
           onChange={(e) => onChangeSearch(e.target.value)}
           value={searchValue}
           type="text"
-          placeholder="Поиск..."
+          placeholder="Поиск"
         />
       </div>
       <div className={styles.sortbox}>

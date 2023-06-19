@@ -27,7 +27,7 @@ const Register = () => {
 
   const onSubmit = (value) => {
     const params = { ...value };
-    fetch(`${process.env.REACT_APP_SERVER_URL}/register`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/register`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -48,10 +48,10 @@ const Register = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.root}>
-        <h2 className={styles.title}>Создать аккаунт</h2>
+        <h2 className={styles.title}>Регистрация</h2>
         <div className={styles.inputBox}>
           <div className={styles.label}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Почта</label>
             <Input
               name="email"
               params={{ required: 'Укажите почту' }}
@@ -59,7 +59,7 @@ const Register = () => {
               errors={errors.email?.message}
               id="email"
               type="email"
-              placeholder="mail@mail.ru"
+              placeholder="compcompany@mail.ru"
             />
           </div>
           <div className={styles.label}>
@@ -71,7 +71,7 @@ const Register = () => {
               errors={errors.fullname?.message}
               id="fullname"
               type="text"
-              placeholder="Иван Иванов"
+              placeholder="Вадим Болтунов"
             />
           </div>
           <div className={styles.label}>

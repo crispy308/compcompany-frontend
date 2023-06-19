@@ -10,7 +10,6 @@ import Login from './pages/Login/Login';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import Register from './pages/Register/Register';
 import Footer from './components/Footer/Footer';
-import Support from './pages/Support/Support';
 
 export const Context = createContext();
 
@@ -25,7 +24,7 @@ function App() {
   }, [cart]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/categories`)
+    fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/categories`)
       .then((res) => res.json())
       .then((arr) => setFilter([{ name: 'Все', tag: 'all' }, ...arr]))
       .catch((err) => console.log(err));
@@ -33,7 +32,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      fetch(`${process.env.REACT_APP_SERVER_URL}/auth`, {
+      fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/auth`, {
         method: 'get',
         headers: {
           'Content-type': 'application/json',
@@ -55,6 +54,7 @@ function App() {
         value={{ cart, setCart, isAuth, setIsAuth, filter, activeCategory, setActiveCategory }}>
         <Header />
         <div className="container">
+          <div className='wrapper'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
@@ -62,8 +62,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFoundPage />} />
-            {/* <Route path="/support" element={<Support />} /> */}
           </Routes>
+          </div>
         </div>
         <Footer />
       </Context.Provider>

@@ -15,9 +15,6 @@ const Cartlist = () => {
         <div className={styles.list}>
           <div className={styles.titlebox}>
             <h1>Корзина</h1>
-            <span onClick={() => setCart([])} className={styles.delcart}>
-              Очистить корзину
-            </span>
           </div>
           {cart.map((obj) => {
             return <CartItem key={obj._id} {...obj} />;

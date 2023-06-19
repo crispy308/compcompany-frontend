@@ -4,6 +4,23 @@
   padding: 0px;
   margin: 0px;
   border: none;
+
+}
+
+.main__wrapper {
+  padding-top: 70px;
+  display: grid;
+  grid-template-areas: 's l l';
+
+}
+
+.sidebar {
+  grid-area: s;
+}
+
+.rightbar {
+  grid-area: l l;
+  
 }
 
 *,

@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 
 import styles from './Cartitem.module.scss';
-import Counter from '../Counter/Counter';
-import delIcon from '../../assets/img/delete.svg';
+// import Counter from '../Counter/Counter';
 import { Context } from '../../App';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +29,7 @@ const CartItem = ({ _id, title, price, imgUrl, count, priceFinal }) => {
         </div>
       </div>
       <div className={styles.btns}>
-        <Counter count={count} onChange={handleCartChange} />
+        {/* <Counter count={count} onChange={handleCartChange} /> */}
         <div className={styles.price}>{priceFinal} ₽</div>
       </div>
       <div onClick={() => setCart(cart.filter((obj) => obj._id !== _id))} className={styles.del}>

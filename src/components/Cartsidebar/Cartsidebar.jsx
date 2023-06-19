@@ -10,7 +10,7 @@ const CartSidebar = () => {
 
   const onSubmit = () => {
     const params = { orders: [...cart] };
-    fetch(`${process.env.REACT_APP_SERVER_URL}/order`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/order`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -33,11 +33,6 @@ const CartSidebar = () => {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
-        <div className={styles.countBox}>
-          <div>Товаров к покупке</div>
-          
-          <div className={styles.counter}>{cart.reduce((sum, obj) => sum + obj.count, 0)}</div>
-        </div>
         <div className={styles.priceBox}>
           <div className={styles.title}>Итого</div>
           <div className={styles.price}>{cart.reduce((sum, obj) => sum + obj.priceFinal, 0)}₽</div>

@@ -26,7 +26,7 @@ const Login = () => {
 
   const onSubmit = (value) => {
     const params = { ...value };
-    fetch(`${process.env.REACT_APP_SERVER_URL}/login`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/login`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.root}>
-        <h2 className={styles.title}>Войти в аккаунт</h2>
+        <h2 className={styles.title}>Авторизация</h2>
         <div className={styles.inputBox}>
           <div className={styles.label}>
             <label htmlFor="email">Email</label>
@@ -58,7 +58,7 @@ const Login = () => {
               errors={errors.email?.message}
               id="email"
               type="email"
-              placeholder="mail@mail.ru"
+              placeholder="compcompany@mail.ru"
             />
           </div>
           <div className={styles.label}>

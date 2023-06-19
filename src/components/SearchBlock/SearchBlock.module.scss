@@ -2,7 +2,6 @@
 @import '../../scss/mixins';
 
 .searchblock {
-  @include flex(space-between);
   margin: 25px 0;
   border-radius: 10px;
   @media (max-width: 570px) {
@@ -13,10 +12,11 @@
 .search {
   @include flex(flex-start);
   background-color: white;
+  width: 220px;
   padding: 8px 15px;
-  border: 1px solid rgba($dark-grey, 0.4);
-  border-radius: 5px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.4);
   margin-right: 15px;
+  margin-bottom: 60px;
   img {
     width: 25px;
     height: 25px;
@@ -53,8 +53,6 @@
   @include flex(flex-start);
   color: $dark-grey;
   padding: 10px;
-  border: 1px solid rgba($dark-grey, 0.4);
-  border-radius: 5px;
   cursor: pointer;
   img {
     transition: all ease-in-out 0.3s;

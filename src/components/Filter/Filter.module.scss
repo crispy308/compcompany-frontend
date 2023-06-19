@@ -3,14 +3,13 @@
 
 .filterbox {
   margin: 10px 0;
-  @include flex(flex-start);
   overflow: auto;
 }
 
 .item {
   // @include bglessButton($dark-grey, $blue);
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   cursor: pointer;
   color: $dark-grey;

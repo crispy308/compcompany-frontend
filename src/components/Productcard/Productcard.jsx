@@ -13,7 +13,7 @@ const Productcard = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      let product = await fetch(`${process.env.REACT_APP_SERVER_URL}/products/${id}`);
+      let product = await fetch(`${process.env.REACT_APP_SERVER_URL || "http://localhost:4000" }/products/${id}`);
       product = await product.json();
       if (product.error) {
         navigate('/notfound');

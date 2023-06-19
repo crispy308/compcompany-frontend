@@ -44,10 +44,10 @@ const Header = () => {
         ) : (
           <div className={styles.btns}>
             <Link className={styles.linkBtn} to={'/login'}>
-              Войти
+              Авторизация
             </Link>
             <Link className={styles.regLinkBtn} to={'/register'}>
-              Создать аккаунт
+            Регистрация
             </Link>
           </div>
         )}
