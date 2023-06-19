@@ -1,0 +1,80 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.header {
+  background-color: $grey;
+  padding: 20px 0;
+  transition: all ease-in-out 0.1s;
+}
+
+.title {
+  color: $orange;
+  font-size: 24px;
+  font-weight: 700;
+  @media (max-width: 375px) {
+    font-size: 17px;
+  }
+}
+
+.inner {
+  @include flex(space-between);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  @include button(white, $orange);
+  padding: 10px 20px 10px 0;
+  margin-right: 10px;
+  span {
+    min-width: 45px;
+  }
+  @media (max-width: 375px) {
+    padding: 10px;
+  }
+}
+
+.btns {
+  @include flex(flex-start);
+}
+
+.logoutBtn {
+  @include button(white, $red);
+  height: 44px;
+  padding: 10px;
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.linkBtn {
+  @include button(white, $blue);
+  border: 1px solid $blue;
+  margin-right: 10px;
+  padding: 10px 30px;
+}
+
+.regLinkBtn {
+  @include button($blue, $grey);
+  border: 1px solid rgba($dark-grey, 0.5);
+  padding: 10px 30px;
+}
+
+.imgbox {
+  @include flex(center);
+  border-right: 1px solid $grey;
+  margin-right: 25px;
+  padding: 0 20px;
+  span {
+    min-width: 25px;
+    margin-right: 5px;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  @media (max-width: 375px) {
+    padding: 0 5px 0 0;
+  }
+}
