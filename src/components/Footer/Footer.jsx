@@ -24,13 +24,15 @@ const Footer = () => {
         <div className={styles.inner}>
           <div className={styles.item}>
             <span className={styles.number}>СompСompany</span>
-            <span className={styles.mail}>compcompany@mail.ru</span>
+            <span className={styles.mail}>compcompany@inbox.ru</span>
+            <span className={styles.red}>Все права защищены 2023</span>
+
             <div className={styles.links}>
             </div>
           </div>
           <div className={styles.item}>
-            <h2 className={styles.title}>Каталог</h2>
-            <ul className={styles.list}>
+            {/* <h2 className={styles.title}>Каталог</h2> */}
+            {/* <ul className={styles.list}>
               {filter.map((obj) => {
                 return (
                   <li
@@ -41,7 +43,7 @@ const Footer = () => {
                   </li>
                 );
               })}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

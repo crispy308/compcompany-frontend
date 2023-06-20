@@ -27,6 +27,10 @@
   margin-bottom: 50px;
 }
 
+.red {
+  color: #9a9a9a
+}
+
 .links {
   @include flex(flex-start);
   a {
